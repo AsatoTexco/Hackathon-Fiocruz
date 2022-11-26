@@ -168,7 +168,35 @@ $ano = "2002";
     
     
 
-    //MANDAR DE VOLTA PARA O FRONT
+    //MANDAR DE VOLTA PARA O FRONT (fim do api saude)
+
+     //MEMES DA API CEP
+
+     $vars2 = array(
+    '{cep}'  => $cep
+    );    
+
+    $url_cep = "https://viacep.com.br/ws/{cep}/json/";
+
+    $url_cep = strtr($url_cep, $vars2);
+
+     //INiciando curl
+     $curl = curl_init($url_cep);
+     curl_setopt($curl, CURLOPT_URL, $url_cep);
+     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+ 
+     $cep_json = curl_exec($curl);
+     curl_close($curl);
+    
+     $cep_json = json_decode($cep_json);
+     
+     
+     if ($cep_json->localidade == "Campo Grande"){
+        echo $cep_json->bairro;
+        
+     }else {
+        echo "Cep inválido!";
+     }
 ?>
 
 
