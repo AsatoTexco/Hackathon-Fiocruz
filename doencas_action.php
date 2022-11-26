@@ -159,7 +159,8 @@ $ano = "2002";
         array_push($probabilidades,$doença->Issue->Accuracy);
     }
 
-    
+    echo $deoncas_possiveis;
+    echo $probabilidades;
 
     //MANDAR DE VOLTA PARA O FRONT
 
