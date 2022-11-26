@@ -221,6 +221,10 @@ $ano = "2002";
 <div class="teste">
 
     <p><?php echo $probabilidades?></p>
+    <p><?php if ($cep_json->localidade == "Campo Grande"){
+               echo $cep_json->bairro;
+             }else {
+               echo "Cep inválido!";} ?></p>
 
 </div>
 
