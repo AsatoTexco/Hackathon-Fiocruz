@@ -84,3 +84,84 @@ if(isset($nome) and isset($nome) and isset($nome) and isset($nome) and isset($no
 // $tokenDecodificado = json_decode($token_sintomas);
 // $token_sintomas_final = $tokenDecodificado->Token;
 // echo $token_sintomas_final;
+
+//COISAS DA API
+
+//declarando variaveis
+$api_key = "jp_duprat@hotmail.com";
+$secret_key = "Zd27YfJq3j8PAc9y6";
+//HASH "chumbada" (refazer na hora)
+$computed_hash = "w8Af5h04oz9IcBvQYUinDg==";
+
+$url = "https://sandbox-authservice.priaid.ch/login";
+
+$hash = hash_hmac('md5', $url, $secret_key);
+$hashed_credentials = base64_encode ($hash);
+
+
+$token = $api_key.":".$computed_hash;
+
+//TROCAR POR VARIAVEIS DO ARTHUR
+$genero = "male";
+$ano = "2002";
+$sintomas = [11,13,15];
+$sintomas = implode(",", $sintomas);
+
+//function jwt_request($token, $post) 
+
+    header('Content-Type: application/json'); // Specify the type of data
+    $ch = curl_init($url); // Initialise cURL
+   // $post = json_encode($post); // Encode the data array into a JSON string
+    $authorization = "Authorization: Bearer ".$token; // Prepare the authorisation token
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization )); // Inject the token into the header
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, 1); // Specify the request method as POST
+    //curl_setopt($ch, CURLOPT_POSTFIELDS, $post); // Set the posted fields
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // This will follow any redirects
+    $result = curl_exec($ch); // Execute the cURL statement
+    curl_close($ch); // Close the cURL connection
+    //return json_decode($result); // Return the received data
+
+    //decodificando token
+    $token_sintomas = $result;
+
+    $token_decodificado = json_decode($token_sintomas);
+    // print_r($decode);
+
+    $token_sintomas_final =  $token_decodificado->Token;
+
+    //criando url do pedido atual
+    $vars = array(
+    '{token}'       => $token_sintomas_final,
+    '{gender}'        => $genero,
+    '{ano}' => $ano,
+    '{sintomas}' => "[".$sintomas."]"
+    );    
+
+    $url_doenca = "https://sandbox-healthservice.priaid.ch/diagnosis?token={token}&symptoms={sintomas}&gender={gender}&year_of_birth={ano}&language=en-gb";
+
+    $url_doenca = strtr($url_doenca, $vars);
+    //INiciando curl
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_URL, $url_doenca);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $resp = curl_exec($curl);
+    curl_close($curl);
+    
+
+    $resp = json_decode($resp);
+
+    $doencas_possiveis = [];
+    $probabilidades = [];
+
+    foreach ($resp as $key => $doença) {
+        array_push($doencas_possiveis,$doença->Issue->Name);
+        array_push($probabilidades,$doença->Issue->Accuracy);
+    }
+
+    //MANDAR DE VOLTA PARA O FRONT
+
+    //$probabilidades = implode(",",$doencas_possiveis);
+    //$doencas_possiveis = implode(",",$doencas_possiveis);
+
