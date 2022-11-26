@@ -14,7 +14,7 @@ $cep = filter_input(INPUT_POST,'cep');
 
 
 
-if(isset($nome) and isset($nome) and isset($nome) and isset($nome) and isset($nome)){
+if(isset($nome) and isset($data) and isset($phone) and isset($sexo) and isset($cep)){
 
     // RECEBER VALOR DAS CHECKBOXES
     $sintomas = null;
@@ -89,6 +89,7 @@ if(isset($nome) and isset($nome) and isset($nome) and isset($nome) and isset($no
 
 //declarando variaveis
 $api_key = "jp_duprat@hotmail.com";
+//CHUMBADAÇA
 $secret_key = "Zd27YfJq3j8PAc9y6";
 //HASH "chumbada" (refazer na hora)
 $computed_hash = "w8Af5h04oz9IcBvQYUinDg==";
@@ -102,10 +103,8 @@ $hashed_credentials = base64_encode ($hash);
 $token = $api_key.":".$computed_hash;
 
 //TROCAR POR VARIAVEIS DO ARTHUR
-$genero = "male";
+$genero = $sexo;
 $ano = "2002";
-$sintomas = [11,13,15];
-$sintomas = implode(",", $sintomas);
 
 //function jwt_request($token, $post) 
 
@@ -135,7 +134,7 @@ $sintomas = implode(",", $sintomas);
     '{token}'       => $token_sintomas_final,
     '{gender}'        => $genero,
     '{ano}' => $ano,
-    '{sintomas}' => "[".$sintomas."]"
+    '{sintomas}' => "[".$sintomasString."]"
     );    
 
     $url_doenca = "https://sandbox-healthservice.priaid.ch/diagnosis?token={token}&symptoms={sintomas}&gender={gender}&year_of_birth={ano}&language=en-gb";
@@ -160,8 +159,9 @@ $sintomas = implode(",", $sintomas);
         array_push($probabilidades,$doença->Issue->Accuracy);
     }
 
+    
+
     //MANDAR DE VOLTA PARA O FRONT
 
     //$probabilidades = implode(",",$doencas_possiveis);
     //$doencas_possiveis = implode(",",$doencas_possiveis);
-
