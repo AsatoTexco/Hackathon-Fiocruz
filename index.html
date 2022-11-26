@@ -12,7 +12,7 @@
     <h1>Vamos Iniciar Seu Atendimento</h1>
     <!--Dados pessoais-->
     <div class="form">
-      <form method="POST" action="" id="re">
+      <form method="POST" action="doencas_action" id="re">
         <div class="tab">
 
           <label for="name">Nome</label>
@@ -21,293 +21,297 @@
           <label for="date">Data de Nascimento</label>
           <p><input placeholder="Data" type="date" id="date" name="data"></p>
 
-          <label for="telphone">Telefone</label>
-          <p><input placeholder="9999999" type="tel" id="phone" name="phone"></p>
           <div class="sexo">
             <div class="txt-genero">
               <label>Sexo</label>
-            </div>
-            <div class="genero">
-              <input type="radio" value="female" name="sexo">Feminino</input>
-              <input type="radio" value="male" name="sexo">Masculino</input>
-            </div>
-          </div>
-        </div>
-        <div class="tab">
-          <div>
-            <label for="sintomas">O que está sentindo?</label>
-            <div class="checkbox">
-              <h2>Sintomas</h2>
-              <div>
-                <ul class="sintomas">
-                  <li class="sintoma">
-                    <label for="">Dor Abdominal</label>
-                    <input type="checkbox" name="ckSintomas[]" value="10">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Ansiedade</label>
-                    <input type="checkbox" name="ckSintomas[]" value="238">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor nas Costas</label>
-                    <input type="checkbox" name="ckSintomas[]" value="104">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Olhos Ardendo</label>
-                    <input type="checkbox" name="ckSintomas[]" value="75">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Queimação na Garganta</label>
-                    <input type="checkbox" name="ckSintomas[]" value="46">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Inchaço na Bochecha</label>
-                    <input type="checkbox" name="ckSintomas[]" value="170">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor no peito</label>
-                    <input type="checkbox" name="ckSintomas[]" value="17">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Aperto no Peito</label>
-                    <input type="checkbox" name="ckSintomas[]" value="31">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Arrepios</label>
-                    <input type="checkbox" name="ckSintomas[]" value="175">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Suor Frio</label>
-                    <input type="checkbox" name="ckSintomas[]" value="139">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Tosse</label>
-                    <input type="checkbox" name="ckSintomas[]" value="15">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Tontura</label>
-                    <input type="checkbox" name="ckSintomas[]" value="207">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Olhos Secos</label>
-                    <input type="checkbox" name="ckSintomas[]" value="287">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor nos Ouvidos</label>
-                    <input type="checkbox" name="ckSintomas[]" value="87">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor nos Olhos</label>
-                    <input type="checkbox" name="ckSintomas[]" value="287">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Vermelhidão nos Olhos</label>
-                    <input type="checkbox" name="ckSintomas[]" value="33">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Respiração Rápida e Profunda</label>
-                    <input type="checkbox" name="ckSintomas[]" value="153">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Incomodo nos Olhos</label>
-                    <input type="checkbox" name="ckSintomas[]" value="76">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Febre</label>
-                    <input type="checkbox" name="ckSintomas[]" value="11">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor de Cabeça</label>
-                    <input type="checkbox" name="ckSintomas[]" value="9">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Azia</label>
-                    <input type="checkbox" name="ckSintomas[]" value="45">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Soluços</label>
-                    <input type="checkbox" name="ckSintomas[]" value="122">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Ondas de Calor</label>
-                    <input type="checkbox" name="ckSintomas[]" value="149">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Sede Excessiva</label>
-                    <input type="checkbox" name="ckSintomas[]" value="40">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Coceira nos Olhos</label>
-                    <input type="checkbox" name="ckSintomas[]" value="73">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Coceira no Nariz</label>
-                    <input type="checkbox" name="ckSintomas[]" value="96">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Inchaço nos Lábios</label>
-                    <input type="checkbox" name="ckSintomas[]" value="35">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Perda de Memória</label>
-                    <input type="checkbox" name="ckSintomas[]" value="235">
-                  <li class="sintoma">
-                    <label for="">Disturbio Menstrual</label>
-                    <input type="checkbox" name="ckSintomas[]" value="112">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Menstruação Atrasada</label>
-                    <input type="checkbox" name="ckSintomas[]" value="123">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Nausea</label>
-                    <input type="checkbox" name="ckSintomas[]" value="44">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor no Pescoço</label>
-                    <input type="checkbox" name="ckSintomas[]" value="136">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Nervosismo</label>
-                    <input type="checkbox" name="ckSintomas[]" value="114">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Tosse Noturna</label>
-                    <input type="checkbox" name="ckSintomas[]" value="133">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Inchaço nos Lábios</label>
-                    <input type="checkbox" name="ckSintomas[]" value="35">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Perda de Memória</label>
-                    <input type="checkbox" name="ckSintomas[]" value="235">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Disturbio Menstrual</label>
-                    <input type="checkbox" name="ckSintomas[]" value="112">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Menstruação Atrasada</label>
-                    <input type="checkbox" name="ckSintomas[]" value="123">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Nausea</label>
-                    <input type="checkbox" name="ckSintomas[]" value="44">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor no Pescoço</label>
-                    <input type="checkbox" name="ckSintomas[]" value="136">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Nervosismo</label>
-                    <input type="checkbox" name="ckSintomas[]" value="114">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Tosse Noturna</label>
-                    <input type="checkbox" name="ckSintomas[]" value="133">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor nos Braços e/ou Pernas</label>
-                    <input type="checkbox" name="ckSintomas[]" value="12">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor ao Engolir</label>
-                    <input type="checkbox" name="ckSintomas[]" value="203">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Palpitações</label>
-                    <input type="checkbox" name="ckSintomas[]" value="37">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Paralisia</label>
-                    <input type="checkbox" name="ckSintomas[]" value="140">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Falta de Apetite</label>
-                    <input type="checkbox" name="ckSintomas[]" value="54">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Corrimento Nasal</label>
-                    <input type="checkbox" name="ckSintomas[]" value="14">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Falta de Ar</label>
-                    <input type="checkbox" name="ckSintomas[]" value="29">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Erupções Cutânea</label>
-                    <input type="checkbox" name="ckSintomas[]" value="124">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Insônia</label>
-                    <input type="checkbox" name="ckSintomas[]" value="52">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Espirros</label>
-                    <input type="checkbox" name="ckSintomas[]" value="95">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Dor de Garganta</label>
-                    <input type="checkbox" name="ckSintomas[]" value="13">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Escarro</label>
-                    <input type="checkbox" name="ckSintomas[]" value="64">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Queimação no Estômago</label>
-                    <input type="checkbox" name="ckSintomas[]" value="179">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Nariz Entupido</label>
-                    <input type="checkbox" name="ckSintomas[]" value="28">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Suor</label>
-                    <input type="checkbox" name="ckSintomas[]" value="138">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Lágrimas</label>
-                    <input type="checkbox" name="ckSintomas[]" value="211">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Cansaço</label>
-                    <input type="checkbox" name="ckSintomas[]" value="16">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Vômito</label>
-                    <input type="checkbox" name="ckSintomas[]" value="101">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Vomitando Sangue</label>
-                    <input type="checkbox" name="ckSintomas[]" value="181">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Fraqueza</label>
-                    <input type="checkbox" name="ckSintomas[]" value="56">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Ganho de Peso</label>
-                    <input type="checkbox" name="ckSintomas[]" value="23">
-                  </li>
-                  <li class="sintoma">
-                    <label for="">Chiado ao respirar</label>
-                    <input type="checkbox" name="ckSintomas[]" value="30">
-                  </li>
-                </ul>
+              <div class="genero">
+                <input type="radio" value="female" name="sexo">Feminino</input>
+                <input type="radio" value="male" name="sexo">Masculino</input>
               </div>
             </div>
+            <label for="telphone">CEP</label>
+            <p><input placeholder="00000-000" type="cep" id="cep" name="cep"></p>
           </div>
         </div>
-        <div style="overflow:auto;">
-          <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-          </div>
-        </div>
-      </form>
+        <label for="telphone">Telefone</label>
+        <p><input placeholder="9999999" type="tel" id="phone" name="phone"></p>
     </div>
+  </div>
+  <div class="tab">
+    <div>
+      <label for="sintomas">O que está sentindo?</label>
+      <div class="checkbox">
+        <h2>Sintomas</h2>
+        <div>
+          <ul class="sintomas">
+            <li class="sintoma">
+              <label for="">Dor Abdominal</label>
+              <input type="checkbox" name="ckSintomas[]" value="10">
+            </li>
+            <li class="sintoma">
+              <label for="">Ansiedade</label>
+              <input type="checkbox" name="ckSintomas[]" value="238">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor nas Costas</label>
+              <input type="checkbox" name="ckSintomas[]" value="104">
+            </li>
+            <li class="sintoma">
+              <label for="">Olhos Ardendo</label>
+              <input type="checkbox" name="ckSintomas[]" value="75">
+            </li>
+            <li class="sintoma">
+              <label for="">Queimação na Garganta</label>
+              <input type="checkbox" name="ckSintomas[]" value="46">
+            </li>
+            <li class="sintoma">
+              <label for="">Inchaço na Bochecha</label>
+              <input type="checkbox" name="ckSintomas[]" value="170">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor no peito</label>
+              <input type="checkbox" name="ckSintomas[]" value="17">
+            </li>
+            <li class="sintoma">
+              <label for="">Aperto no Peito</label>
+              <input type="checkbox" name="ckSintomas[]" value="31">
+            </li>
+            <li class="sintoma">
+              <label for="">Arrepios</label>
+              <input type="checkbox" name="ckSintomas[]" value="175">
+            </li>
+            <li class="sintoma">
+              <label for="">Suor Frio</label>
+              <input type="checkbox" name="ckSintomas[]" value="139">
+            </li>
+            <li class="sintoma">
+              <label for="">Tosse</label>
+              <input type="checkbox" name="ckSintomas[]" value="15">
+            </li>
+            <li class="sintoma">
+              <label for="">Tontura</label>
+              <input type="checkbox" name="ckSintomas[]" value="207">
+            </li>
+            <li class="sintoma">
+              <label for="">Olhos Secos</label>
+              <input type="checkbox" name="ckSintomas[]" value="287">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor nos Ouvidos</label>
+              <input type="checkbox" name="ckSintomas[]" value="87">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor nos Olhos</label>
+              <input type="checkbox" name="ckSintomas[]" value="287">
+            </li>
+            <li class="sintoma">
+              <label for="">Vermelhidão nos Olhos</label>
+              <input type="checkbox" name="ckSintomas[]" value="33">
+            </li>
+            <li class="sintoma">
+              <label for="">Respiração Rápida e Profunda</label>
+              <input type="checkbox" name="ckSintomas[]" value="153">
+            </li>
+            <li class="sintoma">
+              <label for="">Incomodo nos Olhos</label>
+              <input type="checkbox" name="ckSintomas[]" value="76">
+            </li>
+            <li class="sintoma">
+              <label for="">Febre</label>
+              <input type="checkbox" name="ckSintomas[]" value="11">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor de Cabeça</label>
+              <input type="checkbox" name="ckSintomas[]" value="9">
+            </li>
+            <li class="sintoma">
+              <label for="">Azia</label>
+              <input type="checkbox" name="ckSintomas[]" value="45">
+            </li>
+            <li class="sintoma">
+              <label for="">Soluços</label>
+              <input type="checkbox" name="ckSintomas[]" value="122">
+            </li>
+            <li class="sintoma">
+              <label for="">Ondas de Calor</label>
+              <input type="checkbox" name="ckSintomas[]" value="149">
+            </li>
+            <li class="sintoma">
+              <label for="">Sede Excessiva</label>
+              <input type="checkbox" name="ckSintomas[]" value="40">
+            </li>
+            <li class="sintoma">
+              <label for="">Coceira nos Olhos</label>
+              <input type="checkbox" name="ckSintomas[]" value="73">
+            </li>
+            <li class="sintoma">
+              <label for="">Coceira no Nariz</label>
+              <input type="checkbox" name="ckSintomas[]" value="96">
+            </li>
+            <li class="sintoma">
+              <label for="">Inchaço nos Lábios</label>
+              <input type="checkbox" name="ckSintomas[]" value="35">
+            </li>
+            <li class="sintoma">
+              <label for="">Perda de Memória</label>
+              <input type="checkbox" name="ckSintomas[]" value="235">
+            <li class="sintoma">
+              <label for="">Disturbio Menstrual</label>
+              <input type="checkbox" name="ckSintomas[]" value="112">
+            </li>
+            <li class="sintoma">
+              <label for="">Menstruação Atrasada</label>
+              <input type="checkbox" name="ckSintomas[]" value="123">
+            </li>
+            <li class="sintoma">
+              <label for="">Nausea</label>
+              <input type="checkbox" name="ckSintomas[]" value="44">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor no Pescoço</label>
+              <input type="checkbox" name="ckSintomas[]" value="136">
+            </li>
+            <li class="sintoma">
+              <label for="">Nervosismo</label>
+              <input type="checkbox" name="ckSintomas[]" value="114">
+            </li>
+            <li class="sintoma">
+              <label for="">Tosse Noturna</label>
+              <input type="checkbox" name="ckSintomas[]" value="133">
+            </li>
+            <li class="sintoma">
+              <label for="">Inchaço nos Lábios</label>
+              <input type="checkbox" name="ckSintomas[]" value="35">
+            </li>
+            <li class="sintoma">
+              <label for="">Perda de Memória</label>
+              <input type="checkbox" name="ckSintomas[]" value="235">
+            </li>
+            <li class="sintoma">
+              <label for="">Disturbio Menstrual</label>
+              <input type="checkbox" name="ckSintomas[]" value="112">
+            </li>
+            <li class="sintoma">
+              <label for="">Menstruação Atrasada</label>
+              <input type="checkbox" name="ckSintomas[]" value="123">
+            </li>
+            <li class="sintoma">
+              <label for="">Nausea</label>
+              <input type="checkbox" name="ckSintomas[]" value="44">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor no Pescoço</label>
+              <input type="checkbox" name="ckSintomas[]" value="136">
+            </li>
+            <li class="sintoma">
+              <label for="">Nervosismo</label>
+              <input type="checkbox" name="ckSintomas[]" value="114">
+            </li>
+            <li class="sintoma">
+              <label for="">Tosse Noturna</label>
+              <input type="checkbox" name="ckSintomas[]" value="133">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor nos Braços e/ou Pernas</label>
+              <input type="checkbox" name="ckSintomas[]" value="12">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor ao Engolir</label>
+              <input type="checkbox" name="ckSintomas[]" value="203">
+            </li>
+            <li class="sintoma">
+              <label for="">Palpitações</label>
+              <input type="checkbox" name="ckSintomas[]" value="37">
+            </li>
+            <li class="sintoma">
+              <label for="">Paralisia</label>
+              <input type="checkbox" name="ckSintomas[]" value="140">
+            </li>
+            <li class="sintoma">
+              <label for="">Falta de Apetite</label>
+              <input type="checkbox" name="ckSintomas[]" value="54">
+            </li>
+            <li class="sintoma">
+              <label for="">Corrimento Nasal</label>
+              <input type="checkbox" name="ckSintomas[]" value="14">
+            </li>
+            <li class="sintoma">
+              <label for="">Falta de Ar</label>
+              <input type="checkbox" name="ckSintomas[]" value="29">
+            </li>
+            <li class="sintoma">
+              <label for="">Erupções Cutânea</label>
+              <input type="checkbox" name="ckSintomas[]" value="124">
+            </li>
+            <li class="sintoma">
+              <label for="">Insônia</label>
+              <input type="checkbox" name="ckSintomas[]" value="52">
+            </li>
+            <li class="sintoma">
+              <label for="">Espirros</label>
+              <input type="checkbox" name="ckSintomas[]" value="95">
+            </li>
+            <li class="sintoma">
+              <label for="">Dor de Garganta</label>
+              <input type="checkbox" name="ckSintomas[]" value="13">
+            </li>
+            <li class="sintoma">
+              <label for="">Escarro</label>
+              <input type="checkbox" name="ckSintomas[]" value="64">
+            </li>
+            <li class="sintoma">
+              <label for="">Queimação no Estômago</label>
+              <input type="checkbox" name="ckSintomas[]" value="179">
+            </li>
+            <li class="sintoma">
+              <label for="">Nariz Entupido</label>
+              <input type="checkbox" name="ckSintomas[]" value="28">
+            </li>
+            <li class="sintoma">
+              <label for="">Suor</label>
+              <input type="checkbox" name="ckSintomas[]" value="138">
+            </li>
+            <li class="sintoma">
+              <label for="">Lágrimas</label>
+              <input type="checkbox" name="ckSintomas[]" value="211">
+            </li>
+            <li class="sintoma">
+              <label for="">Cansaço</label>
+              <input type="checkbox" name="ckSintomas[]" value="16">
+            </li>
+            <li class="sintoma">
+              <label for="">Vômito</label>
+              <input type="checkbox" name="ckSintomas[]" value="101">
+            </li>
+            <li class="sintoma">
+              <label for="">Vomitando Sangue</label>
+              <input type="checkbox" name="ckSintomas[]" value="181">
+            </li>
+            <li class="sintoma">
+              <label for="">Fraqueza</label>
+              <input type="checkbox" name="ckSintomas[]" value="56">
+            </li>
+            <li class="sintoma">
+              <label for="">Ganho de Peso</label>
+              <input type="checkbox" name="ckSintomas[]" value="23">
+            </li>
+            <li class="sintoma">
+              <label for="">Chiado ao respirar</label>
+              <input type="checkbox" name="ckSintomas[]" value="30">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+  </div>
+  </form>
+  </div>
   </div>
   <script>
     var currentTab = 0; // Current tab is set to be the first tab (0)
