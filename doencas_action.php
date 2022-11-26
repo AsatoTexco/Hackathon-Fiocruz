@@ -25,7 +25,7 @@ if(isset($nome) and isset($data) and isset($phone) and isset($sexo) and isset($c
         
     }
     
-    print_r($sintomas);
+    // print_r($sintomas);
 
 
 
@@ -35,7 +35,7 @@ if(isset($nome) and isset($data) and isset($phone) and isset($sexo) and isset($c
     
         // variavel com os valores com implode
         $sintomasString = implode(",", $sintomas);
-        print $sintomasString;
+        // print $sintomasString;
     
     
         $sql= $pdo->prepare("INSERT INTO user (nome,nascimento,telefone,sexo,cep,sintomas) VALUES (:nome, :data, :phone,:sexo,:cep,:sintomas)");
@@ -108,7 +108,7 @@ $ano = "2002";
 
 //function jwt_request($token, $post) 
 
-    header('Content-Type: application/json'); // Specify the type of data
+    header('Content-Type: text/html'); // Specify the type of data
     $ch = curl_init($url); // Initialise cURL
    // $post = json_encode($post); // Encode the data array into a JSON string
     $authorization = "Authorization: Bearer ".$token; // Prepare the authorisation token
@@ -141,7 +141,7 @@ $ano = "2002";
 
     $url_doenca = strtr($url_doenca, $vars);
     //INiciando curl
-    $curl = curl_init($url);
+    $curl = curl_init($url_doenca);
     curl_setopt($curl, CURLOPT_URL, $url_doenca);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -159,10 +159,43 @@ $ano = "2002";
         array_push($probabilidades,$doença->Issue->Accuracy);
     }
 
-    echo $deoncas_possiveis;
+    $probabilidades = implode(",",$probabilidades);
+    $doencas_possiveis = implode(",",$doencas_possiveis);
+
+    echo $doencas_possiveis;
+    echo PHP_EOL;
     echo $probabilidades;
+    
+    
 
     //MANDAR DE VOLTA PARA O FRONT
+?>
 
-    //$probabilidades = implode(",",$doencas_possiveis);
-    //$doencas_possiveis = implode(",",$doencas_possiveis);
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            font-size: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="teste">
+
+    <p><?php echo $probabilidades?></p>
+
+</div>
+
+    
+</body>
+</html>
