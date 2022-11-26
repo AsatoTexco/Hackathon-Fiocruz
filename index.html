@@ -6,8 +6,53 @@
 </head>
 
 <body>
+  <!--tela de inicio, escolher qual opção-->
+  <div class="home">
+    <h2>Seja Bem Vindo</h2>
+    <h1>Iniciar Atendimento</h1>
+    <div>
+      <div class="options">
+        <h3 id="first">Para Mim</h3>
+        <a href="#"><img src="./img/arrow_right_alt_FILL0_wght400_GRAD0_opsz48.svg"></a>
+      </div>
+      <div class="options">
+        <h3 id="second">Para outra pessoa</h3>
+        <a href="#"><img src="./img/arrow_right_alt_FILL0_wght400_GRAD0_opsz48.svg"></a>
+      </div>
+    </div>
+  </div>
+  <!---->
+
   <div class="form">
+    <!--Dados pessoais-->
+    <div class="info">
+      <div>
+        <div>
+          <label for="name">Nome</label>
+          <br>
+          <input type="text" id="name">
+        </div>
+        <div>
+          <label for="date">Data de Nascimento</label>
+          <br>
+          <input type="date" id="date">
+        </div>
+        <div>
+          <label for="telphone">Telefone</label>
+          <br>
+          <input type="tel" id="telphone">
+        </div>
+        <div>
+          <label for="sintomas">O que está sentindo?</label>
+          <br>
+          <textarea id="sintomas">
+            <input type="checkbox">
+          </textarea>
+        </div>
+      </div>
+    </div>
     <!--Sintomas serão selecionados em checkbox, o valor de cada checkbox será filtrado pela API afim de dar direcionamento para o usuario de possiveis doenças e procedimentos recomendados-->
+    <!--
     <div class="checkbox">
       <h2>Sintomas</h2>
       <form method="get">
@@ -268,10 +313,11 @@
             <input type="checkbox" value="30">
           </li>
         </ul>
-        <!--Fim dos sintomas-->
-      </form>
-    </div>
-    <button>Enviar</button>
+      -->
+    <!--Fim dos sintomas-->
+    </form>
+  </div>
+  <button>Enviar</button>
   </div>
 </body>
 
