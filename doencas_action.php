@@ -204,18 +204,28 @@ $ano = "2002";
     <title>Document</title>
 
     <style>
-        p{
-            font-size: 200px;
-        }
+        body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    background: #fff;
+    display: grid;
+    gap: 50px;
+    justify-items: center;
+    padding-top: 70px;
+  }
 
-
+  .resposta{ 
+    background-color: #f7f7f7;
+    border: solid 1px #04AA6D;
+    border-radius: 20px;
+    padding: 1.5rem;
+  }
     </style>
 </head>
 <body>
 
-<div class="teste">
-
-    <div><?php 
+<div class="resposta">
+    <div class="bairro"><?php 
         if ($cep_json != null){
         
             if ($cep_json->localidade == "Campo Grande"){
@@ -233,8 +243,8 @@ $ano = "2002";
     foreach($doencas_possiveis as $doencas1):?>
     
     
-    <div><?php echo $doencas1?></div>
-    <div><?php echo $probabilidades[$cont];$cont = $cont + 1 ;?></div>
+    <div class="doenca"><?php echo $doencas1?></div>
+    <div class="probabilidade"><?php echo $probabilidades[$cont];$cont = $cont + 1 ;?></div>
     <br>
     
 
@@ -244,7 +254,6 @@ $ano = "2002";
 
 
     
-
 </div>
 
     
