@@ -154,11 +154,16 @@ $ano = "2002";
     $doencas_possiveis = [];
     $probabilidades = [];
 
+
+    $ids = [];
     foreach ($resp as $key => $doença) {
+
+        array_push($ids, $doença->Issue->ID);
         array_push($doencas_possiveis,$doença->Issue->Name);
         array_push($probabilidades,$doença->Issue->Accuracy);
     }
 
+    
     $probabilidades1 = implode(",",$probabilidades);
     $doencas_possiveis1 = implode(",",$doencas_possiveis);
 
@@ -190,7 +195,71 @@ $ano = "2002";
     
      $cep_json = json_decode($cep_json);
      
-     
+
+
+     function traduzir($id){
+        $doencasArray = array(
+            170 => "Aborto",
+            509 => "Hidrocele",
+            113 => "Pneumonia",
+            495 => "Barriga inchada",
+            211 => "Síndrome da fadiga crônica",
+            80 => "Resfriado",
+            53 => "Constipação",
+            86 => "Doença arterial coronariana",
+            47 => "Depressão",
+            266 => "Criptorquidia",
+            431 => "Efeito colateral de drogas",
+            237 => "Problemas de ereção",
+            181 => "Sentimento excessivo de medo",
+            11 => "Gripe",
+            281 => "Intoxicação alimentar",
+            107 => "Rubéola",
+            104 => "Dor de cabeça",
+            87 => "Ataque cardíaco",
+            434 => "Coração acelerado",
+            130 => "Hérnia",
+            209 => "Doença de Huntington",
+            15 => "Reação de hipersensibilidade",
+            83 => "Meningite",
+            235 => "Epididimite",
+            44 => "Inflamação do nariz e garganta",
+            504 => "Inflamação da próstata",
+            331 => "Inflamação dos testículos",
+            131 => "Artrite infecciosa",
+            324 => "Pedra no rim",
+            109 => "Doença do beijo",
+            166 => "Listeriose",
+            51 => "Diarréia",
+            79 => "Doença de Lyme",
+            357 => "Câncer de próstata",
+            50 => "Menopausa",
+            489 => "Cólica menstrual", 
+            347 => "Fimose",
+            167 => "Embolia pulmonar",
+            446 => "Gravidez",
+            18 => "Refluxo gastroesofágico",
+            376 => "Escarlatina",
+            68 => "Paralisia Agitante",
+            67 => "Enxaqueca",
+            103 => "Hérnia de disco",
+            19 => "Fumar",
+            510 => "Espermatocele",
+            476 => "Sangramento gastrointestinal",
+            488 => "Tensão nas costas",
+            151 => "Torção testicular",
+            497 => "Doença inflamatória pélvica (DIP)",
+            59 => "Infecção urinária",
+            2059 => "NOVO COVID 2022"
+        );
+    
+        if ($doencasArray[$id]) {
+            return $doencasArray[$id];
+        }else{
+            return "ERRO";
+        }
+    
+    }   
      
 ?>
 
@@ -223,6 +292,7 @@ $ano = "2002";
     </style>
 </head>
 <body>
+    
 
 <div class="resposta">
     <div class="bairro"><?php 
@@ -230,20 +300,58 @@ $ano = "2002";
         
             if ($cep_json->localidade == "Campo Grande"){
               echo "Você esta no bairro: ".$cep_json->bairro.", Procure a unidade de saúde mais próxima de você";
-            }else {
-              echo "Cep inválido!";}} ?></div><br>
+            
+                if($cep_json->bairro == "Conjunto Aero Rancho" or $cep_json->bairro == "Jardim Aero Rancho"){
+
+
+                    echo "<br><br>Unidade Sugerida: Endereço: R. Leonor García Rosa Píres - Conj. Aero Rancho, Campo Grande - MS, 79084-210";
+
+                }
+                else if($cep_json->bairro == "Vila Cidade Morena"){
+
+
+                    echo "<br><br>Unidade Sugerida: Endereço: R. Jaguariuna, 543 - Vila Cidade Morena, Campo Grande - MS, 79073-041";
+
+                }
+                else if($cep_json->bairro == "Nova Lima"){
+
+
+                    echo "<br><br>Unidade Sugerida: Endereço: R. Ida Baís, 19 - Nova Lima, Campo Grande - MS, 79017-084";
+
+                }
+                else if($cep_json->bairro == "Vila Carvalho"){
+
+
+                    echo "<br><br>Unidade Sugerida: Endereço: Av. Joaquim Manoel de Carvalho, 605 - Vila Carvalho, Campo Grande - MS, 79005-580";
+
+                }
+                else if($cep_json->bairro == "Caiçara"){
+
+
+                    echo "<br><br>Unidade Sugerida: Endereço: R. Vital Brasil, 1 - Caicara, Campo Grande - MS, 79090-222";
+
+                }
+            
+            
+            }
+            
+            }  ?></div><br>
         
         
-        
+        <h2>Atenção</h2>
+    <p>Isso é apenas uma pré-triagem, procure seu médico de confiança para que o devido diagnóstico possa ser feito<p>
+        <br>
 
     <?php 
+
+    
     
     $cont = 0;
     
     foreach($doencas_possiveis as $doencas1):?>
     
     
-    <div class="doenca"><?php echo $doencas1?></div>
+    <div class="doenca"><?php echo traduzir($ids[$cont])?></div>
     <div class="probabilidade"><?php echo $probabilidades[$cont];$cont = $cont + 1 ;?></div>
     <br>
     
@@ -251,8 +359,7 @@ $ano = "2002";
 
     <?php endforeach; ?>
 
-    <h2>Atenção</h2>
-    <p>Isso é apenas uma pré-triagem, procure seu médico de confiança para que o devido diagnóstico possa ser feito<p>
+    
 
     
 </div>
