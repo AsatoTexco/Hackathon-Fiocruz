@@ -289,6 +289,11 @@ $ano = "2002";
     border-radius: 20px;
     padding: 1.5rem;
   }
+
+  .doenca{
+    font-size: 20px;
+
+  }
     </style>
 </head>
 <body>
@@ -351,8 +356,16 @@ $ano = "2002";
     foreach($doencas_possiveis as $doencas1):?>
     
     
-    <div class="doenca"><?php echo traduzir($ids[$cont])?></div>
-    <div class="probabilidade"><?php echo $probabilidades[$cont];$cont = $cont + 1 ;?></div>
+    <div class="doenca">
+        
+        <?php 
+        echo (traduzir($ids[$cont]).": " . ($probabilidades[$cont]."%" ) );
+        $cont = $cont + 1;
+    
+        ?>
+
+    </div>
+    
     <br>
     
 
