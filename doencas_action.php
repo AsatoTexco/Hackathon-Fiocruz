@@ -159,12 +159,12 @@ $ano = "2002";
         array_push($probabilidades,$doença->Issue->Accuracy);
     }
 
-    $probabilidades = implode(",",$probabilidades);
-    $doencas_possiveis = implode(",",$doencas_possiveis);
+    $probabilidades1 = implode(",",$probabilidades);
+    $doencas_possiveis1 = implode(",",$doencas_possiveis);
 
-    echo $doencas_possiveis;
-    echo PHP_EOL;
-    echo $probabilidades;
+    // echo $doencas_possiveis;
+    // echo PHP_EOL;
+    // echo $probabilidades;
     
     
 
@@ -191,12 +191,7 @@ $ano = "2002";
      $cep_json = json_decode($cep_json);
      
      
-     if ($cep_json->localidade == "Campo Grande"){
-        echo $cep_json->bairro;
-        
-     }else {
-        echo "Cep inválido!";
-     }
+     
 ?>
 
 
@@ -220,11 +215,35 @@ $ano = "2002";
 
 <div class="teste">
 
-    <p><?php echo $probabilidades?></p>
-    <p><?php if ($cep_json->localidade == "Campo Grande"){
-               echo $cep_json->bairro;
-             }else {
-               echo "Cep inválido!";} ?></p>
+    <div><?php 
+        if ($cep_json != null){
+        
+            if ($cep_json->localidade == "Campo Grande"){
+              echo "Você esta no bairro: ".$cep_json->bairro.", Procure a unidade de saúde mais próxima de você";
+            }else {
+              echo "Cep inválido!";}} ?></div><br>
+        
+        
+        
+
+    <?php 
+    
+    $cont = 0;
+    
+    foreach($doencas_possiveis as $doencas1):?>
+    
+    
+    <div><?php echo $doencas1?></div>
+    <div><?php echo $probabilidades[$cont];$cont = $cont + 1 ;?></div>
+    <br>
+    
+
+
+    <?php endforeach; ?>
+
+
+
+    
 
 </div>
 
