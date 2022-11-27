@@ -251,7 +251,8 @@ $ano = "2002";
 
     <?php endforeach; ?>
 
-
+    <h2>Atenção</h2>
+    <p>Isso é apenas uma pré-triagem, procure seu médico de confiança para que o devido diagnóstico possa ser feito<p>
 
     
 </div>
