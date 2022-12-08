@@ -89,9 +89,8 @@ if(isset($nome) and isset($data) and isset($phone) and isset($sexo) and isset($c
 
 //declarando variaveis
 $api_key = "jp_duprat@hotmail.com";
-//CHUMBADAÇA
+//Mudar para fazer cálculo depois!
 $secret_key = "Zd27YfJq3j8PAc9y6";
-//HASH "chumbada" (refazer na hora)
 $computed_hash = "w8Af5h04oz9IcBvQYUinDg==";
 
 $url = "https://sandbox-authservice.priaid.ch/login";
@@ -175,7 +174,7 @@ $ano = "2002";
 
     //MANDAR DE VOLTA PARA O FRONT (fim do api saude)
 
-     //MEMES DA API CEP
+     //COISAS DA API CEP
 
      $vars2 = array(
     '{cep}'  => $cep
